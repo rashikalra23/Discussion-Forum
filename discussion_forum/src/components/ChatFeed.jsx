@@ -10,7 +10,7 @@ const chat = chats && chats[activeChat];
 
 const renderMessages = () => {
     const keys = Object.keys(messages);
-
+//console.log(messages)
     return keys.map((key, index) => {
       const message = messages[key];
       const lastMessageKey = index === 0 ? null : keys[index - 1];
@@ -22,6 +22,11 @@ const renderMessages = () => {
             {isMyMessage
               ? <MessageSent message={message} />
               : <MessageReceived message={message} lastMessage={messages[lastMessageKey]} />}
+                <div style ={{left: isMyMessage? "auto" : 0 }} className = "datetime"> {
+              
+              new Date(message.created).toLocaleString()
+            }
+            </div>
           </div>
           <div className="read-receipts" style={{ marginRight: isMyMessage ? '18px' : '0px', marginLeft: isMyMessage ? '0px' : '68px' }}>
             {renderReadReceipts(message, isMyMessage)}
@@ -46,7 +51,8 @@ if(!chat) return 'Loading...';
 
 return(
     <div className="chat-feed">
-        <div className="chat-title-container">
+       <div style={{display: 'flex'}}>
+       <div className="chat-title-container">
             <div className="chat-title">{chat?.title} </div>
             <div className="chat-subtitle">
                  { chat.people.map((person) => {
@@ -56,6 +62,14 @@ return(
                  })}
             </div>
         </div>
+        <button className="LogOut" onClick={()=>{
+          localStorage.clear();
+          window.location.reload();
+        }}>
+          LogOut 
+        </button>
+       </div>
+       
         {renderMessages()}
         <div style={{ height: '100px'}} />
         <div className="message-from-container">

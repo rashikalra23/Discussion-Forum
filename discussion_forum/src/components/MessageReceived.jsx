@@ -6,7 +6,7 @@
              {isFirstMessageByUser &&(
                  <div
                    className = " message-avatar"
-                   style = {{backgroundImage: message.sender &&  'url(${message?.sender?.avatar})'}}
+                   style = {{backgroundImage: message.sender &&  `url(${message?.sender?.avatar})`}}
                  />
              )}
              {
@@ -21,6 +21,7 @@
                        ) : (
                         <div className="message" style ={{ float: 'left', backgroundColor: '#CABCDC', marginLeft: isFirstMessageByUser ? '4px' : '48px'}}>
                         {message.text}
+                    
                         </div>
                            )   
              }
