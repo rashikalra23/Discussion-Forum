@@ -1,6 +1,6 @@
 # Discussion-Forum
 
-<img src="https://drive.google.com/file/d/1AmwdP-cwW8X5O1ITNaINg6yVWXGO7-Td/view?usp=sharing"/>
+<img src="DiscussionForum1.png" />
 Credentials for Admin
 username: Admin
 password: qwerty
@@ -20,3 +20,4 @@ password: qwerty
 
 username: palak18
 password: qwerty
+<img src="DiscussionForum2.png" />
